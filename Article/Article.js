@@ -88,7 +88,7 @@ const data = [
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+/* Step 1: Create a function that creates a component. You will want your component to look like the template below!:
   
   <div class="article">
     <h2>{title of the article}</h2>
@@ -112,3 +112,47 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+// const accordion = document.querySelector('.accordion');
+
+function dataCreator(title, content) {
+
+const articles = document.createElement('div');
+const article = document.createElement('div');
+const date = document.createElement('div');
+const close = document.createElement('button');
+const expandButton = document.createElement('button');
+const articleOpen = document.createElement('div');
+
+articles.classList.add('articles');
+article.classList.add('article');
+date.classList.add('date');
+close.classList.add('close');
+expandButton.classList.add('expand-button');
+articleOpen.classList.add('article-open');
+
+const open = '/u25bc';
+const off = '/u25b2';
+
+buttonOpen.textConent = open;
+buttonClose.textConent = off;
+dataTitle.textConent = title;
+dataContent.textConent = content;
+
+expandButton.addEventListener('click', (e) => {
+buttonOpen.classList.toggle('hide-btn');
+}); 
+
+articles.appendChild(articles);
+article.appendChild(article);
+date.appendChild();
+close.appendChild();
+expandButton.appendChild();
+articleOpen.appendChild();
+
+
+return data;
+}
+// const accordion = document.querySelector('.accordion');
+// const data = dataCreator('Hello', 'World');
+// accordion.append(data); 
