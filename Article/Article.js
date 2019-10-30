@@ -112,44 +112,59 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+// Grabbing our articles so we can append the data component to it.
+const articles = document.querySelector('.articles');
 
-// const accordion = document.querySelector('.accordion');
 
-function dataCreator(title, content) {
+// looping through our data to create multiple card components and appending to the articles
+data.forEach(web => {
+  console.log('creating data:', web.title)
+  articles.appendChild(createData(web.title, web.date, web.firstParagraph, web.secondParagraph, web.thirdParagraph))
+})
 
-const articles = document.createElement('div');
-const article = document.createElement('div');
-const date = document.createElement('div');
-const close = document.createElement('button');
-const expandButton = document.createElement('button');
-const articleOpen = document.createElement('div');
 
-articles.classList.add('articles');
-article.classList.add('article');
-date.classList.add('date');
-close.classList.add('close');
-expandButton.classList.add('expand-button');
-articleOpen.classList.add('article-open');
+// reusuable data component with parameters we will use to pull in our data
+function createData(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  
+  // HTML
+  // <div class="header">
+  //     <img class="menu-button" src="./assets/menu.png"/>
+  //     <h1>Lambda School Newsfeed</h1>
+  //   </div>
+  //   <div class="articles"></div>
 
-const open = '/u25bc';
-const off = '/u25b2';
+// define new elements
+const header = document.createElement('div');
+const menuButton = document.createElement('img');
+const h1 = document.createElement('h1');
 
-buttonOpen.textConent = open;
-buttonClose.textConent = off;
+// Setup structure of elements
+header.appendChild(menuButton);
+header.appendChild(h1);
+
+
+
+// set class names
+header.classList.add('header');
+menuButton.classList.add('menu-button');
+h1.classList.add('h1');
+
+
+//Buttons
+// const open = '/u25bc';
+// const off = '/u25b2';
+
+// set text content
+//title, date, firstParagraph, secondParagraph, thirdParagraph
 dataTitle.textConent = title;
-dataContent.textConent = content;
+dataDate.textConent = date;
+dataFirstParagraph.textConent = firstParagraph;
+dataSecondParagraph.textConent = secondParagraph;
+dataThirdParagraph.textConent = thirdParagraph;
 
-expandButton.addEventListener('click', (e) => {
-buttonOpen.classList.toggle('hide-btn');
-}); 
-
-articles.appendChild(articles);
-article.appendChild(article);
-date.appendChild();
-close.appendChild();
-expandButton.appendChild();
-articleOpen.appendChild();
-
+// expandButton.addEventListener('click', (e) => {
+// buttonOpen.classList.toggle('hide-btn');
+// });
 
 return data;
 }
