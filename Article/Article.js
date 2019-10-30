@@ -113,15 +113,21 @@ const data = [
 
 */
 // Grabbing our articles so we can append the data component to it.
-const articles = document.querySelector('.articles');
+const article = document.querySelector('.article');
 
 
-// looping through our data to create multiple card components and appending to the articles
-data.forEach(web => {
-  console.log('creating data:', web.title)
-  articles.appendChild(createData(web.title, web.date, web.firstParagraph, web.secondParagraph, web.thirdParagraph))
-})
+// looping through our data to create multiple data components and appending to the article
+data.forEach(data => {
 
+  article.appendChild(createData(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+});
+  
+  console.log('creating data:', data.title)
+  console.log('creating data:', data.date)
+  console.log('creating data:', data.firstParagraph)
+  console.log('creating data:', data.secondParagraph)
+  console.log('creating data:', data.thirdParagraph)
+// ^^^ This part I still need to work on. It's not gonna connect the code ^^^
 
 // reusuable data component with parameters we will use to pull in our data
 function createData(title, date, firstParagraph, secondParagraph, thirdParagraph) {
@@ -134,20 +140,35 @@ function createData(title, date, firstParagraph, secondParagraph, thirdParagraph
   //   <div class="articles"></div>
 
 // define new elements
-const header = document.createElement('div');
-const menuButton = document.createElement('img');
-const h1 = document.createElement('h1');
+const article = document.createElement('div');
+const articleTitle = document.createElement('h2');
+const articleDate= document.createElement('p');
+const content1= document.createElement('p');
+const content2= document.createElement('p');
+const content3= document.createElement('p');
+const expBtn= document.createElement('button');
+
+
+// const menuButton = document.createElement('img');
+// const h1 = document.createElement('h1');
 
 // Setup structure of elements
-header.appendChild(menuButton);
-header.appendChild(h1);
+article.appendChild(article);
+article.appendChild(articleTitle);
+article.appendChild(articleDate);
+article.appendChild(content1);
+article.appendChild(content2);
+article.appendChild(content3);
+article.appendChild(expBtn);
 
 
 
 // set class names
-header.classList.add('header');
-menuButton.classList.add('menu-button');
-h1.classList.add('h1');
+articleTitle.classList.add('article');
+articleDate.classList.add('date');
+expBtn.classList.add('expandButton');
+
+console(article);
 
 
 //Buttons
