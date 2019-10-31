@@ -97,24 +97,27 @@ const data = [
     <span class='expandButton'></span>
   </div> */
 
-  const container = document.querySelector('.articles');
-  
+const container = document.querySelector('.articles');
 
-  
-  data.forEach(mydata => {
-    container.appendChild(createData(mydata.title, mydata.date, mydata.firstParagraph, mydata.secondParagraph, mydata.thirdParagraph));
-  })
-  
-
-
+data.forEach(mydata => {
+  container.appendChild(
+    createData(
+      mydata.title,
+      mydata.date,
+      mydata.firstParagraph,
+      mydata.secondParagraph,
+      mydata.thirdParagraph
+    )
+  );
+});
 
 function createData(
   title,
   date,
   firstParagraph,
   secondParagraph,
-  thirdParagraph) 
-  {
+  thirdParagraph
+) {
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
@@ -122,19 +125,18 @@ function createData(
   const content2 = document.createElement('p');
   const content3 = document.createElement('p');
   const expBtn = document.createElement('span');
-  expBtn.textConent = 'Read More';
-  
+
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
   article.appendChild(content1);
   article.appendChild(content2);
   article.appendChild(content3);
   article.appendChild(expBtn);
+  expBtn.appendChild(document.createTextNode('Read More'));
 
   article.classList.add('article');
   articleDate.classList.add('date');
   expBtn.classList.add('expandButton');
-
 
   // set text content = 44:49
   articleTitle.textContent = title;
@@ -142,7 +144,6 @@ function createData(
   content1.textContent = firstParagraph;
   content2.textContent = secondParagraph;
   content3.textContent = thirdParagraph;
-  
 
   /* Hint: You will need to use createElement more than once here!
 
@@ -151,7 +152,7 @@ function createData(
   /* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div. */
   expBtn.addEventListener('click', () => {
     article.classList.toggle('article-open');
-      })
+  });
 
   /* Step 3: return the entire component. */
 
@@ -159,15 +160,14 @@ function createData(
 }
 
 /* Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div. */
-const newData = data.map((web) => 
-createData(
-
-  web.title,
-  web.date,
-  web.firstParagraph,
-  web.secondParagraph,
-  web.thirdParagraph,
-),
+const newData = data.map(web =>
+  createData(
+    web.title,
+    web.date,
+    web.firstParagraph,
+    web.secondParagraph,
+    web.thirdParagraph
+  )
 );
 
 /* Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article. */
