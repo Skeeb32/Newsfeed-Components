@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: '4AM',
+    date: 'Oct 31st, 2019',
+    firstParagraph: `What time is it?`,
+
+    secondParagraph: `Why am I awake? `,
+
+    thirdParagraph: `Finally done with Step 5 and Menu.`
   }
 ];
 
@@ -155,7 +164,6 @@ function createData(
   });
 
   /* Step 3: return the entire component. */
-
   return article;
 }
 
