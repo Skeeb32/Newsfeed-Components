@@ -101,21 +101,20 @@ const data = [
   
 
   
-  data.forEach(cur => {
-    container.appendChild(createData(cur));
-    console.log(cur.content1);
+  data.forEach(mydata => {
+    container.appendChild(createData(mydata.title, mydata.date, mydata.firstParagraph, mydata.secondParagraph, mydata.thirdParagraph));
   })
   
 
 
 
-function createData(obj){
-  // title,
-  // date,
-  // firstParagraph,
-  // secondParagraph,
-  // thirdParagraph) 
-  
+function createData(
+  title,
+  date,
+  firstParagraph,
+  secondParagraph,
+  thirdParagraph) 
+  {
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
@@ -123,7 +122,8 @@ function createData(obj){
   const content2 = document.createElement('p');
   const content3 = document.createElement('p');
   const expBtn = document.createElement('span');
-
+  expBtn.textConent = 'Read More';
+  
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
   article.appendChild(content1);
@@ -133,18 +133,15 @@ function createData(obj){
 
   article.classList.add('article');
   articleDate.classList.add('date');
-  // firstParagraph.classList.add('p');
-  // secondParagraph.classList.add('p');
-  // thirdParagraph.classList.add('p');
   expBtn.classList.add('expandButton');
-  expBtn.textConent = "Read More";
+
 
   // set text content = 44:49
-  articleTitle.textContent = obj.title;
-  articleDate.textContent = obj.date;
-  content1.textContent = obj.firstParagraph;
-  content2.textContent = obj.secondParagraph;
-  content3.textContent = obj.thirdParagraph;
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  content1.textContent = firstParagraph;
+  content2.textContent = secondParagraph;
+  content3.textContent = thirdParagraph;
   
 
   /* Hint: You will need to use createElement more than once here!
